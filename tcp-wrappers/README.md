@@ -1,4 +1,4 @@
-Git hooks "backdoor"
+tcp-wrappers for the win!
 ======================
 
 **How it works**
@@ -35,7 +35,7 @@ All other lines should satisfy the following format, things between [] being opt
 
 **Video**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=rCVmWUf8x1E" target="_blank"><img src="http://img.youtube.com/vi/rCVmWUf8x1E/0.jpg" alt="Profit with Git hooks!" width="480" height="360" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=mOOZwodcm40" target="_blank"><img src="http://img.youtube.com/vi/mOOZwodcm40/0.jpg" alt="Backdoor via TCP wrappers FTW!" width="480" height="360" border="10" /></a>
 
 **Exploit**
 ```shell-session
