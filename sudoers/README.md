@@ -1,4 +1,4 @@
-Advantage of "#include" and README file in sudoers architecture!
+Sudoers "trick" backdoor
 ======================
 
 "*...It is possible to include other sudoers files from within the sudoers file currently being parsed using the #include and #includedir directives...*"
