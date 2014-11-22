@@ -13,3 +13,6 @@ curl -X POST \
 Pulseaudio tools (arecord)
 arecord -d 5 --format=cd --channels=1 --rate=16000 --file-type wav -D default /tmp/trigger.wav
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=iokzWGWitws" target="_blank"><img src="http://img.youtube.com/vi/iokzWGWitws/0.jpg" alt="DNS Exfiltration POC" width="240" height="180" border="10" /></a>
+
+
