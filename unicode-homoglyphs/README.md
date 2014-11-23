@@ -1,4 +1,4 @@
-Unicode homoglyphs backdoor tricks
+Unicode homoglyph backdoor tricks
 ======================
 
 "*...The Unicode character set contains many strongly homoglyphic characters. These present security risks in a variety of situations...*" (Wikipedia)
